@@ -1,0 +1,25 @@
+{
+    "name": "aminkt/yii2-alertwidget",
+    "description": "Advanced Alert widget for yii2 applications.",
+    "keywords": ["yii", "alert", "ui", "widget"],
+    "type": "yii2-extension",
+    "support": {
+    	"source": "https://gitlab.com/aminkt/yii2-alert-widget"
+    },
+    "authors": [
+    	{
+    		"name": "Amin Keshavarz",
+    		"email": "ak_1596@yahoo.com"
+    	}
+    ],
+    "require": {
+        "yiisoft/yii2": ">=2.0.11"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"aminkt\\widgets\\alert\\": ""
+    	}
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
