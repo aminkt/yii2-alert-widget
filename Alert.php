@@ -1,5 +1,5 @@
 <?php
-namespace common\widgets\alert;
+namespace aminkt\widgets\alert;
 
 
 use yii\base\Widget;
