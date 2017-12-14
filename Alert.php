@@ -9,36 +9,47 @@ class Alert extends Widget
     public static $messages=[];
 
     public static function error($title, $message, $name = null){
-        if(!$name)
-            $name = time()+rand(0,100);
+        if (!$name) {
+            $rand = rand(0, 100);
+            $name = 'error' . time() . $rand;
+        }
         \Yii::$app->session->setFlash($name, ['cat'=>'error', 'title'=>$title, 'message'=>$message]);
     }
 
     public static function info($title, $message, $name = null){
-        if(!$name)
-            $name = time()+rand(0,100);
+        if (!$name) {
+            $rand = rand(0, 100);
+            $name = 'info' . time() . $rand;
+        }
         \Yii::$app->session->setFlash($name, ['cat'=>'info', 'title'=>$title, 'message'=>$message]);
     }
 
     public static function warning($title, $message, $name = null){
-        if(!$name)
-            $name = time()+rand(0,100);
+        if (!$name) {
+            $rand = rand(0, 100);
+            $name = 'warning' . time() . $rand;
+        }
         \Yii::$app->session->setFlash($name, ['cat'=>'warning', 'title'=>$title, 'message'=>$message]);
     }
 
     public static function success($title, $message, $name = null){
-        if(!$name)
-            $name = time()+rand(0,100);
+        if (!$name) {
+            $rand = rand(0, 100);
+            $name = 'success' . time() . $rand;
+        }
         \Yii::$app->session->setFlash($name, ['cat'=>'success', 'title'=>$title, 'message'=>$message]);
     }
 
     public function init(){
-		foreach (\Yii::$app->session->getAllFlashes() as $key => $message) {
+        parent::init();
+        $session = \Yii::$app->session;
+        $flashes = $session->getAllFlashes();
+        foreach ($flashes as $key => $message) {
 			if($message['cat'] == 'info' or $message['cat'] == 'error' or $message['cat'] == 'warning' or $message['cat'] == 'success') {
 				static::$messages[] = ['cat'=>$message['cat'], 'title'=>$message['title'], 'message'=>$message['message']];
-				\Yii::$app->session->removeFlash($key);
-			}
-		}
+                \Yii::$app->session->removeFlash($key);
+            }
+        }
     }
 
     /**
