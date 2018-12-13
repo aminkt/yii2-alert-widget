@@ -4,7 +4,7 @@
     "keywords": ["yii", "alert", "ui", "widget"],
     "type": "yii2-extension",
     "support": {
-    	"source": "https://gitlab.com/aminkt/yii2-alert-widget"
+    	"source": "https://github.com/aminkt/yii2-alert-widget"
     },
     "authors": [
     	{
@@ -19,7 +19,5 @@
     	"psr-4": {
     		"aminkt\\widgets\\alert\\": ""
     	}
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
